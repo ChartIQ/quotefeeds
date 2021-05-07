@@ -5,7 +5,7 @@
 
 /* global muse */
 
-import { CIQ, timezoneJS } from "../../js/chartiq.js";
+import { CIQ, timezoneJS } from "chartiq/js/standard.js";
 
 var QuoteFeed = {
 	INITIAL: 1,
