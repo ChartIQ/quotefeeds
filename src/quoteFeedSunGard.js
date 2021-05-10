@@ -1,8 +1,29 @@
 //-------------------------------------------------------------------------------------------
-// Copyright 2012-2018 by ChartIQ, Inc.
+// Copyright 2012-2021 by ChartIQ, Inc.
 // All rights reserved
 //-------------------------------------------------------------------------------------------
 
+/** 
+ * Using this quotefeed:
+ * 
+ * This feed relies on four properties set in the museParams property of the quotefeed to work: 
+ * 
+ * - group
+ * - login
+ * - password
+ * - server
+ *
+ * By default the feed will look for these four at an object assigned to the CIQ namespace, CIQ.SG_Credential and load them.
+ * You can also load credentials on to the museParams object by specifying a path to museParams.credentialsFile or load a file credential.js.
+ * An easy way to load these properties is to declare a default export containing the information and assigning it to museParams propety of the quotefeed.
+ * 
+ * @example
+ * import quoteFeedSunGard from "quoteFeedSunGard.js"
+ * import credentials from "sungard-credentials.js" // example file holding your credentials
+ * 
+ * quoteFeedSunGard.museParams = credentials
+ * 
+ */
 /* global muse */
 
 import { CIQ, timezoneJS } from "chartiq/js/standard.js";
