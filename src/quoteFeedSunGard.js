@@ -13,25 +13,19 @@
  * - password
  * - server
  *
- * By default the feed will look for these four at an object assigned to the CIQ namespace, CIQ.SG_Credential and load them.
- * You can also load credentials on to the museParams object by specifying a path to museParams.credentialsFile or load a file credential.js.
- * An easy way to load these properties is to declare a default export containing the information and assigning it to museParams property of the quotefeed.
+ * By default the feed will look for these four at an object assigned to the CIQ namespace, `CIQ.SG_Credential`, and use them.
+ * You can also load credentials by specifying a path to a credentials file in `museParams.credentialsFile`.
+ * By default it will look for a file named `credential.js` in the project root.
+ * An example of what the credential file should look like is given below.
  * 
  * @example
- * // sungard-credentials.js
+ * // credentials.js
  * export default {
- * 	group: "XXXXXX",
- *	login: "XXXX",
- *	password: "welcome123!",
- *	server: "https://cfs.marketmapmuse.com"
+ *  group: "XXXXXX",
+ *  login: "XXXX",
+ *  password: "welcome123!",
+ *  server: "https://cfs.marketmapmuse.com"
  * }
- *
- *  
- * // index.js
- * import quoteFeedSunGard from "quoteFeedSunGard.js"
- * import credentials from "sungard-credentials.js" // example file holding your credentials
- * 
- * quoteFeedSunGard.museParams = credentials
  * 
  */
 /* global muse */
