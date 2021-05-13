@@ -2,7 +2,7 @@
 // Copyright 2012-2016 by ChartIQ, Inc.
 // All rights reserved
 //-------------------------------------------------------------------------------------------
-import { CIQ, timezoneJS, quoteFeed } from "chartiqjs/standard.js";
+import { CIQ, timezoneJS, quoteFeed } from "chartiq/js/standard.js";
 
 CIQ.activateImports(quoteFeed); // so we can access the CIQ.QuoteFeed
 
