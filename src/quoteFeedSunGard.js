@@ -3,11 +3,11 @@
 // All rights reserved
 //-------------------------------------------------------------------------------------------
 
-/** 
+/**
  * Using this quotefeed:
- * 
- * This feed relies on four properties set in the museParams property of the quotefeed to work: 
- * 
+ *
+ * This feed relies on four properties set in the museParams property of the quotefeed to work:
+ *
  * - group
  * - login
  * - password
@@ -26,11 +26,11 @@
  *  password: "welcome123!",
  *  server: "https://cfs.marketmapmuse.com"
  * }
- * 
+ *
  */
 /* global muse */
 
-import { CIQ, timezoneJS } from "chartiq/js/standard.js";
+import { CIQ, timezoneJS } from "../../js/standard.js";
 
 var QuoteFeed = {
 	INITIAL: 1,
@@ -1128,7 +1128,6 @@ CIQ.ChartEngine.Driver.Lookup.SunGard.prototype.acceptText = function (
 		});
 		if (type) req.Type = type;
 
-		var self = this;
 		function handleResponse(response) {
 			//console.log("Received onSymbolsSearch response");
 			//console.log(response);

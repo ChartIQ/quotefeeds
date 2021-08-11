@@ -2,7 +2,7 @@
 // Copyright 2012-2016 by ChartIQ, Inc.
 // All rights reserved
 //-------------------------------------------------------------------------------------------
-import { CIQ, timezoneJS, quoteFeed } from "chartiq/js/standard.js";
+import { CIQ, timezoneJS, quoteFeed } from "../../js/standard.js";
 
 CIQ.activateImports(quoteFeed); // so we can access the CIQ.QuoteFeed
 
@@ -218,6 +218,12 @@ CIQ.QuoteFeed.Xignite.prototype.fetch = function (params, cb) {
 		params.symbolObject.assetClass,
 		CIQ.QuoteFeed.Xignite.Constants.OPTION_FUTURE
 	);
+	var isCrypto =
+		CIQ.Market.Symbology.isForexCrypto(symbol) ||
+		_checkAssetClass(
+			params.symbolObject.assetClass,
+			CIQ.QuoteFeed.Xignite.Constants.CRYPTO
+		);
 	//var isFutureSpread=_checkAssetClass(params.symbolObject.assetClass, CIQ.QuoteFeed.Xignite.Constants.FUTURE_SPREAD);
 	var isDaily = CIQ.ChartEngine.isDailyInterval(params.interval);
 	var expiredFuture = false;
@@ -316,12 +322,12 @@ CIQ.QuoteFeed.Xignite.prototype.fetch = function (params, cb) {
 			//must calculate startdate so we can use API
 			startDate = new Date(myDate.getTime());
 			if (isDaily) startDate.setDate(startDate.getDate() - myMaxRecords);
-			else
-				startDate.setMinutes(
-					startDate.getMinutes() -
-						myMaxRecords *
-							(isNaN(params.interval) ? params.period : params.interval)
-				);
+			else {
+				var interval = isNaN(params.interval) ? params.period : params.interval;
+				startDate.setMinutes(startDate.getMinutes() - myMaxRecords * interval);
+				var minutes = startDate.getMinutes();
+				startDate.setMinutes(minutes - (minutes % interval));
+			}
 		} else if (params.startDate) {
 			startDate = toMarketTime(params.startDate, marketZone);
 		}
@@ -858,7 +864,7 @@ CIQ.QuoteFeed.Xignite.prototype.fetch = function (params, cb) {
 						//Xignite bug is enabled, for forex daily update
 						bcdt.setHours(bcdt.getHours() + 1);
 					}
-					if (bcdt.getDay() == 6) continue; //filter out erroneous Saturday data
+					if (!isCrypto && bcdt.getDay() == 6) continue; //filter out erroneous Saturday data
 					if (!isDaily) {
 						var marketOffset = 0;
 						if (api.results.offset) {
@@ -1333,7 +1339,8 @@ CIQ.QuoteFeed.Xignite.Constants = {
 	CURRENCY: "Currency",
 	OPTION_FUTURE: "OptionOnFuture",
 	FUTURE_SPREAD: "FutureSpread",
-	RATES: "Rates"
+	RATES: "Rates",
+	CRYPTO: "Crypto"
 };
 
 CIQ.QuoteFeed.Xignite.Templates = {
@@ -2550,10 +2557,13 @@ var quoteFeedXignite = {
 		params,
 		cb
 	) {
+		params.startDate = suggestedStartDate;
+		params.endDate = suggestedEndDate;
 		return this.instance.fetch(params, cb);
 	},
 
 	fetchUpdateData: function (symbol, startDate, params, cb) {
+		params.startDate = startDate;
 		return this.instance.fetch(params, cb);
 	},
 
@@ -2564,6 +2574,8 @@ var quoteFeedXignite = {
 		params,
 		cb
 	) {
+		params.startDate = suggestedStartDate;
+		params.endDate = endDate;
 		return this.instance.fetch(params, cb);
 	},
 
