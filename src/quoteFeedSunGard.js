@@ -17,7 +17,7 @@
  * You can also load credentials by specifying a path to a credentials file in `museParams.credentialsFile`.
  * By default it will look for a file named `credential.js` in the project root.
  * An example of what the credential file should look like is given below.
- * 
+ *
  * @example
  * // credentials.js
  * export default {
@@ -505,9 +505,8 @@ quoteFeedSunGard.handleDataRequest = function (
 				request[reqID].To = quoteFeedSunGard.toMuseDateString(suggestedEndDate);
 			}
 			if (suggestedStartDate) {
-				request[reqID].From = quoteFeedSunGard.toMuseDateString(
-					suggestedStartDate
-				);
+				request[reqID].From =
+					quoteFeedSunGard.toMuseDateString(suggestedStartDate);
 			}
 
 			// request chart data from Muse.JS

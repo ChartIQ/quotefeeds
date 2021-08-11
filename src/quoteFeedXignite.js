@@ -1088,9 +1088,8 @@ CIQ.QuoteFeed.Xignite.prototype.fetch = function (params, cb) {
 							} else break;
 						}
 					} else this.resultsCache[params.xigniteID] = [];
-					results = this.resultsCache[params.xigniteID] = this.resultsCache[
-						params.xigniteID
-					].concat(results);
+					results = this.resultsCache[params.xigniteID] =
+						this.resultsCache[params.xigniteID].concat(results);
 					if (
 						isFuture &&
 						this.resultsCache[params.xigniteID].length > 1 &&
