@@ -219,11 +219,12 @@ CIQ.QuoteFeed.Xignite.prototype.fetch = function (params, cb) {
 		CIQ.QuoteFeed.Xignite.Constants.OPTION_FUTURE
 	);
 	var isCrypto =
-		CIQ.Market.Symbology.isForexCrypto(symbol) ||
-		_checkAssetClass(
-			params.symbolObject.assetClass,
-			CIQ.QuoteFeed.Xignite.Constants.CRYPTO
-		);
+		CIQ.Market.Symbology.isForexCrypto &&
+		(CIQ.Market.Symbology.isForexCrypto(symbol) ||
+			_checkAssetClass(
+				params.symbolObject.assetClass,
+				CIQ.QuoteFeed.Xignite.Constants.CRYPTO
+			));
 	//var isFutureSpread=_checkAssetClass(params.symbolObject.assetClass, CIQ.QuoteFeed.Xignite.Constants.FUTURE_SPREAD);
 	var isDaily = CIQ.ChartEngine.isDailyInterval(params.interval);
 	var expiredFuture = false;
@@ -1170,9 +1171,8 @@ CIQ.QuoteFeed.Xignite.prototype.fetch = function (params, cb) {
 							} else break;
 						}
 					} else this.resultsCache[params.xigniteID] = [];
-					results = this.resultsCache[params.xigniteID] = this.resultsCache[
-						params.xigniteID
-					].concat(results);
+					results = this.resultsCache[params.xigniteID] =
+						this.resultsCache[params.xigniteID].concat(results);
 
 					if (!params.update && !params.noUpdate) {
 						params.update = true;
@@ -1903,7 +1903,7 @@ CIQ.QuoteFeed.Xignite.Templates = {
 		host: {
 			protocol: "https://",
 			server: "GlobalIndices-chartiq.xignite.com",
-			path: "/gloablindices_xignite"
+			path: "/globalindices_xignite"
 		},
 		version: null,
 		func: "xglobalindices",
