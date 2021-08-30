@@ -3,11 +3,11 @@
 // All rights reserved
 //-------------------------------------------------------------------------------------------
 
-/** 
+/**
  * Using this quotefeed:
- * 
- * This feed relies on four properties set in the museParams property of the quotefeed to work: 
- * 
+ *
+ * This feed relies on four properties set in the museParams property of the quotefeed to work:
+ *
  * - group
  * - login
  * - password
@@ -17,7 +17,7 @@
  * You can also load credentials by specifying a path to a credentials file in `museParams.credentialsFile`.
  * By default it will look for a file named `credential.js` in the project root.
  * An example of what the credential file should look like is given below.
- * 
+ *
  * @example
  * // credentials.js
  * export default {
@@ -26,11 +26,11 @@
  *  password: "welcome123!",
  *  server: "https://cfs.marketmapmuse.com"
  * }
- * 
+ *
  */
 /* global muse */
 
-import { CIQ, timezoneJS } from "chartiq/js/standard.js";
+import { CIQ, timezoneJS } from "../../js/standard.js";
 
 var QuoteFeed = {
 	INITIAL: 1,
@@ -505,9 +505,8 @@ quoteFeedSunGard.handleDataRequest = function (
 				request[reqID].To = quoteFeedSunGard.toMuseDateString(suggestedEndDate);
 			}
 			if (suggestedStartDate) {
-				request[reqID].From = quoteFeedSunGard.toMuseDateString(
-					suggestedStartDate
-				);
+				request[reqID].From =
+					quoteFeedSunGard.toMuseDateString(suggestedStartDate);
 			}
 
 			// request chart data from Muse.JS
@@ -1128,7 +1127,6 @@ CIQ.ChartEngine.Driver.Lookup.SunGard.prototype.acceptText = function (
 		});
 		if (type) req.Type = type;
 
-		var self = this;
 		function handleResponse(response) {
 			//console.log("Received onSymbolsSearch response");
 			//console.log(response);
