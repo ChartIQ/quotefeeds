@@ -4,7 +4,7 @@ This repository contains quotefeed implementations for different market data ven
 
 Vendors include: 
 
- - SunGard
+ - FIS (formerly SunGard)
  - Xignite 
 
 **Each quotefeed requires some form of entitlement that is not included in this repo.** 
