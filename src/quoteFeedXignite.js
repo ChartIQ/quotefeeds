@@ -651,6 +651,9 @@ CIQ.QuoteFeed.Xignite.prototype.fetch = function (params, cb) {
 		if (!params.update && isDaily) {
 			if (isIndex) {
 				api = CIQ.clone(CIQ.QuoteFeed.Xignite.Templates.HistoricalIndex);
+				// S&P indices with IND_SPW exchange needs to be requested with IND_SPF
+				// from the globalindiceshistorical APIs
+				symbol = symbol.replace(/IND_SPW/i, "IND_SPF");
 			} else if (isMutual) {
 				api = CIQ.clone(CIQ.QuoteFeed.Xignite.Templates.HistoricalFunds);
 				getSplitInfo = true;
