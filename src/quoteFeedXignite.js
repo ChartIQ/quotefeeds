@@ -1352,7 +1352,7 @@ CIQ.QuoteFeed.Xignite.Templates = {
 	HistoricalEquity: {
 		host: {
 			protocol: "https://",
-			server: "GlobalHistorical-chartiq.xignite.com", //"globalhistorical.xignite.com"
+			server: "globalhistorical.xignite.com",
 			path: "/globalhistorical_xignite"
 		},
 		version: "v3",
@@ -1385,7 +1385,7 @@ CIQ.QuoteFeed.Xignite.Templates = {
 	HistoricalFunds: {
 		host: {
 			protocol: "https://",
-			server: "NAVs-chartiq.xignite.com",
+			server: "navs.xignite.com",
 			path: "/navs_xignite"
 		},
 		version: "v2",
@@ -1415,11 +1415,11 @@ CIQ.QuoteFeed.Xignite.Templates = {
 	HistoricalIndex: {
 		host: {
 			protocol: "https://",
-			server: "GlobalIndicesHistorical-chartiq.xignite.com",
+			server: "globalindiceshistorical.xignite.com",
 			path: "/globalindiceshistorical_xignite"
 		},
 		version: null,
-		func: "xglobalindiceshistorical",
+		func: "xGlobalIndicesHistorical",
 		format: "csv",
 		method: {
 			day: "GetHistoricalIndexValues",
@@ -1446,7 +1446,7 @@ CIQ.QuoteFeed.Xignite.Templates = {
 	HistoricalForex: {
 		host: {
 			protocol: "https://",
-			server: "GlobalCurrencies-chartiq.xignite.com",
+			server: "globalcurrencies.xignite.com",
 			path: "/globalcurrencies_xignite"
 		},
 		version: null,
@@ -1502,7 +1502,7 @@ CIQ.QuoteFeed.Xignite.Templates = {
 	HistoricalMajorMetals: {
 		host: {
 			protocol: "https://",
-			server: "GlobalMetals-chartiq.xignite.com",
+			server: "globalmetals.xignite.com",
 			path: "/globalmetals_xignite"
 		},
 		version: null,
@@ -1529,7 +1529,7 @@ CIQ.QuoteFeed.Xignite.Templates = {
 	HistoricalMetals: {
 		host: {
 			protocol: "https://",
-			server: "GlobalCurrencies-chartiq.xignite.com",
+			server: "globalcurrencies.xignite.com",
 			path: "/globalcurrencies_xignite"
 		},
 		version: null,
@@ -1553,10 +1553,11 @@ CIQ.QuoteFeed.Xignite.Templates = {
 	},
 
 	/* Historical Futures request */
+	/* NO LONGER SUPPORTED BY XIGNITE */
 	HistoricalFuture: {
 		host: {
 			protocol: "https://",
-			server: "Futures-chartiq.xignite.com",
+			server: "futures.xignite.com",
 			path: "/futures_xignite"
 		},
 		version: null,
@@ -1614,11 +1615,11 @@ CIQ.QuoteFeed.Xignite.Templates = {
 	DelayedEquity: {
 		host: {
 			protocol: "https://",
-			server: "GlobalQuotes-chartiq.xignite.com",
+			server: "globalquotes.xignite.com",
 			path: "/globalquotes_xignite"
 		},
 		version: "v3",
-		func: "xglobalquotes",
+		func: "xGlobalQuotes",
 		format: "csv",
 		method: "GetGlobalExtendedQuote",
 		statics: null,
@@ -1644,7 +1645,7 @@ CIQ.QuoteFeed.Xignite.Templates = {
 	RealTimeEquity: {
 		host: {
 			protocol: "https://",
-			server: "GlobalRealTime-chartiq.xignite.com",
+			server: "globalrealtime.xignite.com",
 			path: "/globalrealtime_xignite"
 		},
 		version: "v3",
@@ -1673,11 +1674,11 @@ CIQ.QuoteFeed.Xignite.Templates = {
 	SuperQuoteEquity: {
 		host: {
 			protocol: "https://",
-			server: "SuperQuotes-chartiq.xignite.com",
+			server: "superquotes.xignite.com",
 			path: "/superquotes_xignite"
 		},
 		version: null,
-		func: "xsuperquotes",
+		func: "xSuperQuotes",
 		format: "csv",
 		method: "GetQuote",
 		statics: null,
@@ -1702,7 +1703,7 @@ CIQ.QuoteFeed.Xignite.Templates = {
 	IntradayEquity: {
 		host: {
 			protocol: "https://",
-			server: "GlobalQuotes-chartiq.xignite.com",
+			server: "globalquotes.xignite.com",
 			path: "/globalquotes_xignite"
 		},
 		version: "v3",
@@ -1730,7 +1731,7 @@ CIQ.QuoteFeed.Xignite.Templates = {
 	IntradayRTEquity: {
 		host: {
 			protocol: "https://",
-			server: "GlobalRealTime-chartiq.xignite.com",
+			server: "globalrealtime.xignite.com",
 			path: "/globalrealtime_xignite"
 		},
 		version: "v3",
@@ -1758,7 +1759,7 @@ CIQ.QuoteFeed.Xignite.Templates = {
 	SuperIntradayEquity: {
 		host: {
 			protocol: "https://",
-			server: "SuperQuotes-chartiq.xignite.com",
+			server: "superquotes.xignite.com",
 			path: "/superquotes_xignite"
 		},
 		version: null,
@@ -1787,7 +1788,7 @@ CIQ.QuoteFeed.Xignite.Templates = {
 	IntradayBATSRTEquity: {
 		host: {
 			protocol: "https://",
-			server: "BATSRealTime-chartiq.xignite.com",
+			server: "batsrealtime.xignite.com",
 			path: "/batsrealtime_xignite"
 		},
 		version: null,
@@ -1816,7 +1817,7 @@ CIQ.QuoteFeed.Xignite.Templates = {
 	BATSRealQuote: {
 		host: {
 			protocol: "https://",
-			server: "BatsRealTime-chartiq.xignite.com",
+			server: "batsrealtime.xignite.com",
 			path: "/batsrealtime_xignite"
 		},
 		version: "v3",
@@ -1847,11 +1848,11 @@ CIQ.QuoteFeed.Xignite.Templates = {
 	DelayedIndex: {
 		host: {
 			protocol: "https://",
-			server: "GlobalIndices-chartiq.xignite.com",
+			server: "globalindices.xignite.com",
 			path: "/globalindices_xignite"
 		},
 		version: null,
-		func: "xglobalindices",
+		func: "xGlobalIndices",
 		format: "csv",
 		method: "GetDelayedIndexValue",
 		statics: null,
@@ -1876,11 +1877,11 @@ CIQ.QuoteFeed.Xignite.Templates = {
 	RealTimeIndex: {
 		host: {
 			protocol: "https://",
-			server: "GlobalIndicesRealTime-chartiq.xignite.com",
+			server: "globalindicesrealtime.xignite.com",
 			path: "/globalindicesrealtime_xignite"
 		},
 		version: null,
-		func: "xglobalindicesrealtime",
+		func: "xGlobalIndicesRealime",
 		format: "csv",
 		method: "GetRealTimeIndexValue",
 		statics: null,
@@ -1905,11 +1906,11 @@ CIQ.QuoteFeed.Xignite.Templates = {
 	IntradayIndex: {
 		host: {
 			protocol: "https://",
-			server: "GlobalIndices-chartiq.xignite.com",
+			server: "globalindices.xignite.com",
 			path: "/globalindices_xignite"
 		},
 		version: null,
-		func: "xglobalindices",
+		func: "xGlobalIndices",
 		format: "csv",
 		method: "GetChartBars",
 		statics: "Precision=Minutes&AdjustmentMethod=",
@@ -1933,11 +1934,11 @@ CIQ.QuoteFeed.Xignite.Templates = {
 	IntradayRTIndex: {
 		host: {
 			protocol: "https://",
-			server: "GlobalIndicesRealTime-chartiq.xignite.com",
+			server: "globalindicesrealtime.xignite.com",
 			path: "/globalindicesrealtime_xignite"
 		},
 		version: null,
-		func: "xglobalindicesrealtime",
+		func: "xGlobalIndicesRealTime",
 		format: "csv",
 		method: "GetChartBars",
 		statics: "Precision=Minutes&AdjustmentMethod=",
@@ -1961,7 +1962,7 @@ CIQ.QuoteFeed.Xignite.Templates = {
 	IntradayRTForex: {
 		host: {
 			protocol: "https://",
-			server: "GlobalCurrencies-chartiq.xignite.com",
+			server: "globalcurrencies.xignite.com",
 			path: "/globalcurrencies_xignite"
 		},
 		version: null,
@@ -1989,7 +1990,7 @@ CIQ.QuoteFeed.Xignite.Templates = {
 	IntradayRTMetals: {
 		host: {
 			protocol: "https://",
-			server: "GlobalMetals-chartiq.xignite.com",
+			server: "globalmetals.xignite.com",
 			path: "/globalmetals_xignite"
 		},
 		version: null,
@@ -2014,10 +2015,11 @@ CIQ.QuoteFeed.Xignite.Templates = {
 	},
 
 	/* Delayed Futures request (for today)*/
+	/* NO LONGER SUPPORTED BY XIGNITE */
 	DelayedFuture: {
 		host: {
 			protocol: "https://",
-			server: "Futures-chartiq.xignite.com",
+			server: "futures.xignite.com",
 			path: "/futures_xignite"
 		},
 		version: null,
@@ -2044,7 +2046,7 @@ CIQ.QuoteFeed.Xignite.Templates = {
 	DelayedMF: {
 		host: {
 			protocol: "https://",
-			server: "NAVs-chartiq.xignite.com",
+			server: "navs.xignite.com",
 			path: "/navs_xignite"
 		},
 		version: "v2",
@@ -2071,7 +2073,7 @@ CIQ.QuoteFeed.Xignite.Templates = {
 	SplitRatio: {
 		host: {
 			protocol: "https://",
-			server: "GlobalHistorical-chartiq.xignite.com",
+			server: "globalhistorical.xignite.com",
 			path: "/globalhistorical_xignite"
 		},
 		version: "v3",
@@ -2122,7 +2124,7 @@ CIQ.QuoteFeed.Xignite.Templates = {
 	CorpActionData: {
 		host: {
 			protocol: "https://",
-			server: "GlobalHistorical-chartiq.xignite.com",
+			server: "globalhistorical.xignite.com",
 			path: "/globalhistorical_xignite"
 		},
 		version: "v3",
@@ -2136,7 +2138,7 @@ CIQ.QuoteFeed.Xignite.Templates = {
 	DividendData: {
 		host: {
 			protocol: "https://",
-			server: "GlobalHistorical-chartiq.xignite.com",
+			server: "globalhistorical.xignite.com",
 			path: "/globalhistorical_xignite"
 		},
 		version: "v3",
@@ -2151,8 +2153,8 @@ CIQ.QuoteFeed.Xignite.Templates = {
 	HistoricalRates: {
 		host: {
 			protocol: "https://",
-			server: "www.xignite.com",
-			path: "/www_xignite"
+			server: "rates.xignite.com",
+			path: "/rates_xignite"
 		},
 		version: null,
 		func: "xRates",
@@ -2178,8 +2180,8 @@ CIQ.QuoteFeed.Xignite.Templates = {
 	IntradayRates: {
 		host: {
 			protocol: "https://",
-			server: "www.xignite.com",
-			path: "/www_xignite"
+			server: "rates.xignite.com",
+			path: "/rates_xignite"
 		},
 		version: null,
 		func: "xRates",
@@ -2238,6 +2240,10 @@ CIQ.QuoteFeed.Xignite.getSnapshotQuote = function (
 		var field = "Bid";
 		if (CIQ.Market.Symbology.isForexMetal(params.symbol)) {
 			CIQ.extend(api, {
+				host: {
+					server: "globalmetals.xignite.com",
+					path: "/globalmetals_xignite"
+				},
 				func: "xGlobalMetals",
 				method: "GetRealTimeMetalQuote",
 				fields: "Date,Time,Bid",
@@ -2245,12 +2251,20 @@ CIQ.QuoteFeed.Xignite.getSnapshotQuote = function (
 			});
 		} else if (CIQ.Market.Symbology.isForexSymbol(params.symbol)) {
 			CIQ.extend(api, {
+				host: {
+					server: "globalcurrencies.xignite.com",
+					path: "/globalcurrencies_xignite"
+				},
 				func: "xGlobalCurrencies",
 				method: "GetRealTimeRate",
 				fields: "Date,Time,Bid"
 			});
 		} else {
 			CIQ.extend(api, {
+				host: {
+					server: "batsrealtime.xignite.com",
+					path: "/batsrealtime_xignite"
+				},
 				func: "xBATSRealTime",
 				method: "GetRealQuote",
 				fields: "Date,Time,Last"
