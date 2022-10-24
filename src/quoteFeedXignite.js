@@ -1881,7 +1881,7 @@ CIQ.QuoteFeed.Xignite.Templates = {
 			path: "/globalindicesrealtime_xignite"
 		},
 		version: null,
-		func: "xGlobalIndicesRealime",
+		func: "xGlobalIndicesRealTime",
 		format: "csv",
 		method: "GetRealTimeIndexValue",
 		statics: null,
