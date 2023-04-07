@@ -1,5 +1,5 @@
 //-------------------------------------------------------------------------------------------
-// Copyright 2012-2016 by ChartIQ, Inc.
+// Copyright © 2023 S&P Global All rights reserved
 // All rights reserved
 //-------------------------------------------------------------------------------------------
 import { CIQ, timezoneJS, quoteFeed } from "../../js/standard.js";
